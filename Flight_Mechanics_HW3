@@ -1,0 +1,15 @@
+%% HW3
+clear variables;
+clc;
+
+%% 6.1
+
+syms U V W P Q R
+
+V_B = [U; V; W];
+omega_B = [P; Q; R];
+a_B = [diff(U); diff(V); diff(W)] + cross(omega_B, V_B);
+
+a_b = subs(a_B, [U,V,W,P,Q,R], [10,20,30,0.1,0.2,0.3]);
+
+disp(a_B)
